@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản Vẽ Thiết Kế Giao Diện (Design Sketches & Wireframes) - Nguyễn Quang Toàn</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b1120;
+            color: #f1f5f9;
+        }
+        .sketch-font {
+            font-family: 'Space Mono', monospace;
+        }
+        .navbar {
+            backdrop-filter: blur(12px);
+            background-color: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .wireframe-canvas {
+            background-color: #0f172a;
+            border: 2px dashed #3b82f6;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 24px;
+        }
+        .wireframe-box {
+            border: 2px solid #64748b;
+            background-color: rgba(51, 65, 85, 0.5);
+            border-radius: 8px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .wireframe-box.header-box {
+            border-color: #38bdf8;
+            background-color: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            height: 50px;
+        }
+        .wireframe-box.hero-box {
+            border-color: #818cf8;
+            background-color: rgba(129, 140, 248, 0.15);
+            color: #a5b4fc;
+            height: 120px;
+        }
+        .wireframe-box.card-box {
+            border-color: #34d399;
+            background-color: rgba(52, 211, 153, 0.15);
+            color: #6ee7b7;
+            height: 90px;
+        }
+        .wireframe-box.footer-box {
+            border-color: #f472b6;
+            background-color: rgba(244, 114, 182, 0.15);
+            color: #f472b6;
+            height: 45px;
+        }
+        .device-mobile {
+            max-width: 340px;
+            margin: 0 auto;
+            border: 8px solid #334155;
+            border-radius: 36px;
+            padding: 16px;
+            background-color: #020617;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .device-notch {
+            width: 90px;
+            height: 16px;
+            background-color: #334155;
+            border-radius: 0 0 10px 10px;
+            margin: -16px auto 16px auto;
+        }
+        .device-desktop {
+            border: 8px solid #334155;
+            border-radius: 16px;
+            padding: 16px;
+            background-color: #020617;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .device-stand {
+            width: 140px;
+            height: 25px;
+            background-color: #1e293b;
+            margin: 0 auto;
+            border-radius: 0 0 12px 12px;
+        }
+        .device-base {
+            width: 220px;
+            height: 10px;
+            background-color: #334155;
+            margin: 0 auto 30px auto;
+            border-radius: 6px;
+        }
+        .explanation-card {
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            height: 100%;
+        }
+        .badge-step {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #6366f1;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="index.html">Toan<span class="text-primary">.dev</span></a>
+            <div class="ms-auto d-flex gap-2">
+                <a href="index.html" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-arrow-left me-1"></i> Về Trang Chính</a>
+                <button class="btn btn-primary btn-sm" onclick="window.print()"><i class="fa-solid fa-print me-1"></i> Xuất / In Bản Vẽ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="py-5 text-center bg-dark bg-opacity-50 border-bottom border-secondary border-opacity-25">
+        <div class="container">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3">
+                <i class="fa-solid fa-pencil me-1"></i> Assignment Design Sketches & Wireframes
+            </span>
+            <h1 class="display-4 fw-bold">Bản Phác Thảo Giao Diện (Sketches)</h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">
+                Tài liệu thiết kế Wireframe cho website cá nhân <strong>Nguyễn Quang Toàn</strong>. Minh họa chi tiết 2 chế độ hiển thị đặc thù: <strong>Mobile View</strong> (màn hình nhỏ) và <strong>Desktop/Larger Screen View</strong> (màn hình lớn), xây dựng bằng hệ thống <strong>Bootstrap 5 Grid System</strong>.
+            </p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <!-- Interactive View Comparison Section -->
+        <div class="row g-5 align-items-start mb-5">
+            <!-- Mobile View Sketch -->
+            <div class="col-lg-5">
+                <div class="text-center mb-4">
+                    <span class="badge bg-success px-3 py-2 rounded-pill fs-6 mb-2">View #1: Mobile View (&lt; 768px)</span>
+                    <h3 class="fw-bold">Phác Thảo Màn Hình Di Động</h3>
+                    <p class="text-secondary small">Bố cục 1 cột dọc liên tục (Single Column Stacked)</p>
+                </div>
+
+                <!-- Mobile Device Wireframe Container -->
+                <div class="device-mobile sketch-font">
+                    <div class="device-notch"></div>
+                    
+                    <!-- Mobile Navbar Wireframe -->
+                    <div class="wireframe-box header-box justify-content-between px-3">
+                        <span>[ Logo ]</span>
+                        <span>[ ☰ Hamburger Menu ]</span>
+                    </div>
+
+                    <!-- Mobile Hero Wireframe -->
+                    <div class="wireframe-box hero-box flex-column justify-content-center">
+                        <div class="fw-bold mb-1">[ Avatar Image (Centered) ]</div>
+                        <div class="small text-muted mb-2">[ Họ Tên & Sinh Năm 2007 ]</div>
+                        <span class="badge bg-primary bg-opacity-50">[ CTA Buttons ]</span>
+                    </div>
+
+                    <!-- Mobile Stats Wireframe -->
+                    <div class="row g-1 mb-2">
+                        <div class="col-6"><div class="wireframe-box mb-0 py-2">[ Năm Sinh ]</div></div>
+                        <div class="col-6"><div class="wireframe-box mb-0 py-2">[ Đam Mê ]</div></div>
+                    </div>
+
+                    <!-- Mobile Section Title -->
+                    <div class="text-center text-muted small my-2">--- [ Sở Thích (1 Column) ] ---</div>
+
+                    <!-- Mobile Cards Stack (1 Column) -->
+                    <div class="wireframe-box card-box flex-column mb-2">
+                        <div class="fw-bold">[ ♟️ Cờ Vua Card ]</div>
+                        <div class="small text-muted">[ Image + Text ]</div>
+                    </div>
+
+                    <div class="wireframe-box card-box flex-column mb-2">
+                        <div class="fw-bold">[ 🎬 Xem Phim Card ]</div>
+                        <div class="small text-muted">[ Image + Text ]</div>
+                    </div>
+
+                    <div class="wireframe-box card-box flex-column mb-2">
+                        <div class="fw-bold">[ 😴 Ngủ Card ]</div>
+                        <div class="small text-muted">[ Image + Text ]</div>
+                    </div>
+
+                    <!-- Mobile Footer Wireframe -->
+                    <div class="wireframe-box footer-box mt-3 mb-0">
+                        <span>[ Footer Copyright & Jump Link ]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile View Explanation -->
+            <div class="col-lg-7">
+                <div class="explanation-card">
+                    <h4 class="fw-bold text-success mb-3">
+                        <i class="fa-solid fa-mobile-screen-button me-2"></i> Phân Tích Thiết Kế: Mobile View
+                    </h4>
+                    <p class="text-secondary">
+                        Theo phương pháp <strong>Mobile-First Design</strong>, trải nghiệm trên điện thoại được tối ưu để người dùng thao tác một tay dễ dàng và nội dung không bị chen chúc:
+                    </p>
+                    
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-success">1</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Thanh điều hướng thu gọn (Hamburger Navbar)</h6>
+                                <p class="text-secondary small mb-0">Sử dụng component <code>navbar-toggler</code> của Bootstrap để giấu các liên kết vào icon menu 3 sọc, giải phóng diện tích màn hình.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-success">2</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Hero Section căn giữa theo cột dọc</h6>
+                                <p class="text-secondary small mb-0">Ảnh đại diện và thông tin cá nhân (Nguyễn Quang Toàn, sinh năm 2007) xếp chồng lên nhau thành 1 cột (<code>col-12</code>), các nút bấm mở rộng toàn chiều rộng để chạm ngón cái tiện lợi.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-success">3</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Thẻ nội dung xếp chồng 100% chiều rộng</h6>
+                                <p class="text-secondary small mb-0">Các thẻ sở thích (Cờ vua, Xem phim, Ngủ), Phim (Harry Potter, Sherlock Holmes) và Game (Minecraft, TFT, Chess) hiển thị tuần tự dạng danh sách cuộn dọc, kích thước ảnh tự co giãn linh hoạt.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-secondary opacity-25 my-5">
+
+        <!-- Desktop / Large Screen View Sketch -->
+        <div class="row g-5 align-items-start">
+            <!-- Desktop View Sketch -->
+            <div class="col-lg-7">
+                <div class="text-center mb-4">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill fs-6 mb-2">View #2: Large Screen View (&ge; 992px)</span>
+                    <h3 class="fw-bold">Phác Thảo Màn Hình Máy Tính (Desktop)</h3>
+                    <p class="text-secondary small">Bố cục đa cột (Multi-Column Grid) với Bootstrap Grid System</p>
+                </div>
+
+                <!-- Desktop Device Wireframe Container -->
+                <div class="device-desktop sketch-font">
+                    <!-- Desktop Header Wireframe -->
+                    <div class="wireframe-box header-box justify-content-between px-4">
+                        <span class="fw-bold">[ Toan.dev Logo ]</span>
+                        <div class="d-flex gap-3 text-muted small">
+                            <span>[ Về Tôi ]</span>
+                            <span>[ Sở Thích ]</span>
+                            <span>[ Phim ]</span>
+                            <span>[ Games ]</span>
+                            <span class="text-warning">[ Sketches ]</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Hero 2-Column Wireframe -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-7">
+                            <div class="wireframe-box hero-box flex-column align-items-start text-start p-3">
+                                <div class="badge bg-info bg-opacity-25 text-info mb-1">[ Badge ]</div>
+                                <div class="fw-bold fs-6 text-white">[ Nguyễn Quang Toàn (2007) ]</div>
+                                <div class="small text-muted">[ Lời giới thiệu chi tiết 2-3 dòng ]</div>
+                                <div class="d-flex gap-2 mt-auto">
+                                    <span class="badge bg-primary">[ CTA Button 1 ]</span>
+                                    <span class="badge bg-secondary">[ CTA Button 2 ]</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="wireframe-box hero-box flex-column justify-content-center">
+                                <i class="fa-solid fa-image fs-3 mb-1 text-primary"></i>
+                                <span class="fw-bold">[ Avatar Card & Glow ]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop 4-Column Stats -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-3"><div class="wireframe-box mb-0 py-2">[ Năm: 2007 ]</div></div>
+                        <div class="col-3"><div class="wireframe-box mb-0 py-2">[ Đam Mê: Cờ Vua ]</div></div>
+                        <div class="col-3"><div class="wireframe-box mb-0 py-2">[ Phim: Trinh Thám ]</div></div>
+                        <div class="col-3"><div class="wireframe-box mb-0 py-2">[ Năng Lượng: Ngủ ]</div></div>
+                    </div>
+
+                    <!-- Desktop 3-Column Hobbies Grid -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-4">
+                            <div class="wireframe-box card-box flex-column">
+                                <span class="fw-bold">[ ♟️ Cờ Vua ]</span>
+                                <span class="small text-muted">[ Col 1/3 ]</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="wireframe-box card-box flex-column">
+                                <span class="fw-bold">[ 🎬 Xem Phim ]</span>
+                                <span class="small text-muted">[ Col 2/3 ]</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="wireframe-box card-box flex-column">
+                                <span class="fw-bold">[ 😴 Ngủ ]</span>
+                                <span class="small text-muted">[ Col 3/3 ]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop 2-Column Movies Grid -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-6">
+                            <div class="wireframe-box card-box flex-column">
+                                <span class="fw-bold">[ ⚡ Harry Potter (Col 1/2) ]</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="wireframe-box card-box flex-column">
+                                <span class="fw-bold">[ 🔍 Sherlock Holmes (Col 2/2) ]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Footer Wireframe -->
+                    <div class="wireframe-box footer-box mb-0">
+                        <span>[ Footer: Bản Quyền © 2026 Nguyễn Quang Toàn • Quick Navigation Links ]</span>
+                    </div>
+                </div>
+                <div class="device-stand"></div>
+                <div class="device-base"></div>
+            </div>
+
+            <!-- Desktop View Explanation -->
+            <div class="col-lg-5">
+                <div class="explanation-card">
+                    <h4 class="fw-bold text-primary mb-3">
+                        <i class="fa-solid fa-desktop me-2"></i> Phân Tích Thiết Kế: Desktop View
+                    </h4>
+                    <p class="text-secondary">
+                        Tận dụng không gian màn hình rộng rãi (&ge; 992px) để tạo trải nghiệm thị giác ấn tượng và giảm độ dài cuộn trang:
+                    </p>
+
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-primary">1</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Thanh điều hướng trải ngang đầy đủ</h6>
+                                <p class="text-secondary small mb-0">Menu mở rộng tự động với các tab điều hướng trực tiếp không cần bấm mở, kèm nút liên kết nổi bật sang trang phác thảo.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-primary">2</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Bố cục 2 cột bất đối xứng (7 : 5)</h6>
+                                <p class="text-secondary small mb-0">Sử dụng <code>col-lg-7</code> cho phần giới thiệu chữ và <code>col-lg-5</code> cho thẻ ảnh chân dung lớn tạo thế cân bằng thẩm mỹ.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="badge-step bg-primary">3</span>
+                            <div>
+                                <h6 class="fw-bold mb-1">Hệ thống Grid 3 cột & 2 cột linh hoạt</h6>
+                                <p class="text-secondary small mb-0">Phần sở thích và games chia đều thành 3 cột song song (<code>col-md-4</code>), còn phần phim ảnh chia 2 cột đối xứng (<code>col-md-6</code>) giúp bố cục đa dạng và phong phú.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary & Checklist Card -->
+        <div class="card bg-secondary bg-opacity-10 border-primary border-opacity-50 rounded-4 p-4 mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-circle-check text-success me-2"></i> Tiêu Chí Đã Hoàn Thành Cho Khóa Học</h4>
+                    <p class="text-secondary mb-0">
+                        ✔ Có ít nhất 2 giao diện trực quan độc lập (Mobile View & Large Screen View).<br>
+                        ✔ Có hình ảnh sơ đồ phác thảo wireframe trực quan minh họa rõ từng thành phần.<br>
+                        ✔ Có phần mô tả chi tiết lý do và cấu trúc thiết kế đáp ứng (Responsive Architecture) bằng <strong>Bootstrap 5</strong>.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="index.html" class="btn btn-primary px-4 py-3 fw-bold rounded-3 shadow">
+                        <i class="fa-solid fa-globe me-2"></i> Xem Trang Trực Tiếp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top border-secondary border-opacity-25 text-center text-secondary">
+        <div class="container">
+            <p class="mb-0">© 2026 Nguyễn Quang Toàn • Thiết kế Wireframe & Phác thảo giao diện cho Coursera.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

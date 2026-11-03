@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Quang Toàn - Trang Chủ Giới Thiệu (Bootstrap 5)</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .navbar {
+            backdrop-filter: blur(12px);
+            background-color: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+            color: #94a3b8 !important;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #6366f1 !important;
+        }
+        .card-custom {
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            overflow: hidden;
+            height: 100%;
+        }
+        .card-custom:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25);
+            border-color: #6366f1;
+        }
+        .card-img-wrapper {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .card-custom:hover .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+        .badge-cat {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #60a5fa;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-banner {
+            padding: 80px 0 60px 0;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 60%);
+        }
+        .btn-custom {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+            color: #fff;
+        }
+        .avatar-box {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.15);
+        }
+        .stat-badge {
+            background-color: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 15px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="index.html">Toan<span class="text-primary">.dev</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbies">Sở Thích</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#movies">Phim Ảnh</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#games">Trò Chơi</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="landingpage.html"><i class="fa-solid fa-pen-ruler me-1"></i> Bản Vẽ Thiết Kế (Sketches)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-banner">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="badge bg-primary bg-opacity-25 text-primary px-3 py-2 rounded-pill fw-bold mb-3 d-inline-block">
+                        👋 Xin chào, tôi là
+                    </span>
+                    <h1 class="display-3 fw-bold mb-3">Nguyễn Quang Toàn</h1>
+                    <p class="fs-4 text-secondary mb-4">Sinh năm <strong class="text-warning">2007</strong> (19 tuổi) • Đam mê cờ vua, điện ảnh & chiến thuật gaming</p>
+                    <p class="lead text-secondary mb-4">
+                        Chào mừng bạn đến với trang giới thiệu của tôi! Tôi là người đam mê tư duy logic chiến thuật trong cờ vua, say đắm những cốt truyện hack não của điện ảnh trinh thám và luôn tìm kiếm sự cân bằng qua những giấc ngủ chất lượng.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="landingpage.html" class="btn btn-warning px-4 py-3 fw-bold rounded-3 shadow">
+                            <i class="fa-solid fa-layer-group me-2"></i> Xem Bản Vẽ Sketches & Wireframe
+                        </a>
+                        <a href="#hobbies" class="btn btn-outline-light px-4 py-3 fw-bold rounded-3">
+                            <i class="fa-solid fa-compass me-2"></i> Khám phá sở thích
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="avatar-box d-inline-block position-relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Nguyễn Quang Toàn" class="img-fluid" style="max-height: 420px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Row -->
+            <div class="row g-3 mt-5">
+                <div class="col-6 col-md-3">
+                    <div class="stat-badge text-center">
+                        <i class="fa-solid fa-calendar-day fs-3 text-primary mb-2"></i>
+                        <h6 class="text-secondary mb-1">Năm sinh</h6>
+                        <h5 class="fw-bold mb-0">2007</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-badge text-center">
+                        <i class="fa-solid fa-chess fs-3 text-warning mb-2"></i>
+                        <h6 class="text-secondary mb-1">Đam mê</h6>
+                        <h5 class="fw-bold mb-0">Cờ Vua</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-badge text-center">
+                        <i class="fa-solid fa-film fs-3 text-danger mb-2"></i>
+                        <h6 class="text-secondary mb-1">Gu phim</h6>
+                        <h5 class="fw-bold mb-0">Kỳ ảo & Trinh thám</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-badge text-center">
+                        <i class="fa-solid fa-bed fs-3 text-info mb-2"></i>
+                        <h6 class="text-secondary mb-1">Năng lượng</h6>
+                        <h5 class="fw-bold mb-0">Ngủ 8 tiếng/ngày</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hobbies Section (Responsive Grid: 1 col on mobile, 3 cols on desktop) -->
+    <section id="hobbies" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6"><i class="fa-solid fa-heart text-danger me-2"></i> Sở Thích Của Tôi</h2>
+                <p class="text-secondary">Những thói quen và đam mê giúp tôi rèn luyện trí tuệ lẫn thư giãn</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=600&q=80" alt="Chơi cờ vua">
+                            <span class="badge-cat"><i class="fa-solid fa-chess-knight me-1"></i> Trí Tuệ</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Cờ Vua</h4>
+                            <p class="text-secondary mb-0">Rèn luyện tư duy logic, khả năng tính toán nhiều nước đi và sự kiên nhẫn qua từng ván cờ căng thẳng.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80" alt="Xem phim điện ảnh">
+                            <span class="badge-cat"><i class="fa-solid fa-clapperboard me-1"></i> Nghệ Thuật</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Xem Phim</h4>
+                            <p class="text-secondary mb-0">Đắm chìm vào những câu chuyện trinh thám, thế giới phép thuật và những cú twist bất ngờ khiến người xem vỡ òa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80" alt="Ngủ nghỉ ngơi">
+                            <span class="badge-cat"><i class="fa-solid fa-moon me-1"></i> Hồi Phục</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Ngủ</h4>
+                            <p class="text-secondary mb-0">Cách tuyệt vời nhất để nạp đầy 100% năng lượng sau những giờ học tập và suy nghĩ chiến thuật cờ vua mệt nhoài.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section id="movies" class="py-5 bg-black bg-opacity-25">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6"><i class="fa-solid fa-ticket text-warning me-2"></i> Phim Yêu Thích</h2>
+                <p class="text-secondary">Những tác phẩm điện ảnh kinh điển mà tôi có thể xem lại nhiều lần</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper" style="height: 260px;">
+                            <img src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=700&q=80" alt="Harry Potter">
+                            <span class="badge-cat"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Phép Thuật</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Harry Potter</h4>
+                            <p class="text-secondary mb-0">Vũ trụ phù thủy Hogwarts huyền diệu với những câu thần chú bí ẩn, tình bạn đẹp đẽ và cuộc chiến giữa ánh sáng và bóng tối.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper" style="height: 260px;">
+                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=700&q=80" alt="Sherlock Holmes">
+                            <span class="badge-cat"><i class="fa-solid fa-magnifying-glass me-1"></i> Trinh Thám</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Sherlock Holmes</h4>
+                            <p class="text-secondary mb-0">Thiên tài thám tử phố Baker với nghệ thuật suy luận diễn dịch sắc bén, phá vỡ những âm mưu tưởng chừng hoàn hảo nhất.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6"><i class="fa-solid fa-gamepad text-primary me-2"></i> Các Tựa Game Thường Chơi</h2>
+                <p class="text-secondary">Nơi tôi giải trí cùng bạn bè và thử thách phản xạ chiến thuật</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=600&q=80" alt="Minecraft">
+                            <span class="badge-cat"><i class="fa-solid fa-cube me-1"></i> Sandbox</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Minecraft</h4>
+                            <p class="text-secondary mb-0">Thỏa sức sáng tạo xây dựng thành phố, khám phá hang động kỳ bí và sinh tồn trong thế giới mở vô hạn.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="TFT Đấu Trường Chân Lý">
+                            <span class="badge-cat"><i class="fa-solid fa-chess-board me-1"></i> Auto-Battler</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">TFT (Đấu Trường Chân Lý)</h4>
+                            <p class="text-secondary mb-0">Đấu trí xếp đội hình, quản lý tiền nong kinh tế và kích hoạt các tộc hệ tương thích để leo rank đỉnh cao.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=600&q=80" alt="Online Chess">
+                            <span class="badge-cat"><i class="fa-solid fa-trophy me-1"></i> Online Boardgame</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold mb-2">Chess (Cờ Vua Online)</h4>
+                            <p class="text-secondary mb-0">Thử thách tốc độ tư duy chớp nhoáng với các kỳ thủ quốc tế qua các trận đấu 3+2 hoặc 5 phút kịch tính.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top border-secondary border-opacity-25 text-center text-secondary">
+        <div class="container">
+            <p class="mb-1">© 2026 Nguyễn Quang Toàn. Xây dựng bằng Bootstrap 5 & Tối ưu Responsive.</p>
+            <p class="small mb-0"><a href="landingpage.html" class="text-warning text-decoration-none"><i class="fa-solid fa-image me-1"></i> Xem trang bản vẽ phác thảo (Design Sketches)</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
